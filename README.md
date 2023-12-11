@@ -1,4 +1,3 @@
-# Devops Project
+# Zopsmart Project
 
-This project is a sample MERN App which will run on kubernetes :)
-The tool `act` is used as we have used a local kubernetes cluster!
+This is a simple project on React and GoFr framework for Zopsmart Assignment Submission.
