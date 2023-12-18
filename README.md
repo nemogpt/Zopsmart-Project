@@ -38,8 +38,9 @@ This is a simple project on React and GoFr framework for Zopsmart Assignment Sub
     - Endpoint: /todos/{id}
     - Description: Delete a todo by its ID.
     - Response: Returns a success message.
- #User Endpoints
-- /register
-- /login
+ 
+# User Endpoints
+    - /register
+    - /login
       
  
