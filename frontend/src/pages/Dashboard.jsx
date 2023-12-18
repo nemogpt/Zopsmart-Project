@@ -60,7 +60,7 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
-        ;(async () => {
+        (async () => {
             if (!refresh) return
             const token = await localforage.getItem("token")
             if (!token) {
@@ -73,7 +73,7 @@ const Dashboard = () => {
     }, [refresh]);
 
     useEffect(() => {
-        ; (async () => {
+         (async () => {
             setLoading(true);
             const token = await localforage.getItem("token")
             if (!token) {

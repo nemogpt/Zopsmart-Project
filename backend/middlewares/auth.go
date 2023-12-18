@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/gofr-dev/gofr/gofr/config"
-	"github.com/gofr-dev/gofr/gofr/utils"
+	"gofr.dev/gofr/config"
+	"gofr.dev/gofr"
 )
 
 func NewAuthMiddleware(cfg *config.Config) gofr.Handler {

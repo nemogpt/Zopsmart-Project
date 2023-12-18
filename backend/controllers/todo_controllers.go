@@ -9,9 +9,9 @@ import (
 	"net/http"
 	"reflect"
 	"time"
+	"gofr.dev/pkg/gofr"
 
 	"github.com/go-playground/validator/v10"
-	"github.com/gofiber/fiber/v2"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
@@ -20,7 +20,7 @@ var todoCollection = configs.GetCollection(configs.DB, "todos")
 var todoValidator = validator.New()
 
 // POST /todo
-func AddTodo(c *fiber.Ctx) error {
+func AddTodo(c *gofr.Context) error {
 	ctx, cancelCtx := context.WithTimeout(context.Background(), 10*time.Second)
 	var todoData models.Todo
 	defer cancelCtx()
@@ -57,7 +57,7 @@ func AddTodo(c *fiber.Ctx) error {
 }
 
 // GET /todo/todoID
-func GetTodo(c *fiber.Ctx) error {
+func GetTodo(c *gofr.Context) error {
 	ctx, cancelCtx := context.WithTimeout(context.Background(), 10*time.Second)
 	var todo models.Todo
 	defer cancelCtx()
@@ -78,7 +78,7 @@ func GetTodo(c *fiber.Ctx) error {
 }
 
 // PUT /todo/todoID
-func EditTodo(c *fiber.Ctx) error {
+func EditTodo(c *gofr.Context) error {
 	ctx, cancelCtx := context.WithTimeout(context.Background(), 10*time.Second)
 	var existingTodo models.Todo
 	var newTodo models.Todo
@@ -114,7 +114,7 @@ func EditTodo(c *fiber.Ctx) error {
 }
 
 // DELETE /todo/todoID
-func DeleteTodo(c *fiber.Ctx) error {
+func DeleteTodo(c *gofr.Context) error {
 	ctx, cancelCtx := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancelCtx()
 
@@ -143,7 +143,7 @@ func DeleteTodo(c *fiber.Ctx) error {
 }
 
 // GET /todos
-func GetTodosByUser(c *fiber.Ctx) error {
+func GetTodosByUser(c *gofr.Context) error {
 	ctx, cancelCtx := context.WithTimeout(context.Background(), 10*time.Second)
 	var todos []models.Todo
 	defer cancelCtx()
